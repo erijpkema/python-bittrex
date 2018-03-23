@@ -75,17 +75,17 @@ class TestBittrexV11PublicAPI(unittest.TestCase):
         self.assertListEqual(['BTC-LTC', 'ETH-LTC', 'USDT-LTC'], actual)
 
     def test_get_wallet_health(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_wallet_health)
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_wallet_health)
 
     def test_get_balance_distribution(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_balance_distribution)
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_balance_distribution)
 
     def test_get_candles(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_candles, market='BTC-LTC',
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_candles, market='BTC-LTC',
                                 tick_interval=TICKINTERVAL_ONEMIN)
 
     def test_get_latest_candle(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_latest_candle, market='BTC-LTC',
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_latest_candle, market='BTC-LTC',
                                 tick_interval=TICKINTERVAL_ONEMIN)
 
 
@@ -117,7 +117,7 @@ class TestBittrexV20PublicAPI(unittest.TestCase):
         test_basic_response(self, actual, "get_currencies")
 
     def test_get_ticker(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_ticker,
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_ticker,
                                 market='BTC-LTC')
 
     def test_get_market_summaries(self):
@@ -252,13 +252,13 @@ class TestBittrexV11AccountAPI(unittest.TestCase):
         self.assertIsInstance(actual['result'], list, "result is not a list")
 
     def test_get_pending_withdrawals(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_pending_withdrawals)
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_pending_withdrawals)
 
     def test_get_pending_deposits(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.get_pending_deposits)
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.get_pending_deposits)
 
     def test_generate_deposit_address(self):
-        self.assertRaisesRegexp(Exception, 'method call not available', self.bittrex.generate_deposit_address, currency='BTC')
+        self.assertRaisesRegex(Exception, 'method call not available', self.bittrex.generate_deposit_address, currency='BTC')
 
 
 @unittest.skipIf(IS_CI_ENV, 'no account secrets uploaded in CI envieonment, TODO')

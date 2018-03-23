@@ -7,7 +7,7 @@ import hmac
 import hashlib
 
 try:
-    from urllib import urlencode
+    from urllib.parse import urlencode
 except ImportError:
     from urllib.parse import urlencode
 
